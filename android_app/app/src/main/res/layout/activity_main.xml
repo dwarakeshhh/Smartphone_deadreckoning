@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smartphone IMU Tracker"
+            android:textColor="@color/primary_dark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvConnStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/idle"
+            android:padding="12dp"
+            android:text="DISCONNECTED"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etIp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Laptop IP (e.g. 192.168.1.5)"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:digits="0123456789."
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1.2"
+                android:hint="Port"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="8000" />
+
+            <EditText
+                android:id="@+id/etRate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1.2"
+                android:hint="Hz"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="50" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IP address · port · sampling rate (Hz)"
+            android:textColor="@color/idle"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="CONNECT" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="START TRACKING" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="STOP TRACKING" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESET" />
+
+        <TextView
+            android:id="@+id/tvTracking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tracking: OFF   ·   Packets sent: 0"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvServer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Server: -"
+            android:textColor="@color/idle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Sensors"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSensors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card"
+            android:padding="10dp"
+            android:text="-"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Live values"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:text="-"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Place the phone flat and still on the start point, press START TRACKING, wait for calibration (~1.5 s) on the laptop, then move it."
+            android:textColor="@color/idle"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>
